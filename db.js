@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+mongoose.connect('mongodb+srv://rishiekandala:Saikiki_2728@paytm.gvoeny8.mongodb.net/',);
+
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -21,4 +24,18 @@ const userSchema = new mongoose.Schema({
         trim: true,
         maxLength: 50
     },
-    lastN
+    lastName: {
+        type: String,
+        required: true,
+        trim: true,
+        maxLength: 50
+    }
+    
+});
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = {
+    User
+};
+
